@@ -48,6 +48,8 @@ namespace WebApp
 
             services.AddTransient<IGetCategoryByIdUseCase, GetCategoryByIdUseCase>();
 
+            services.AddTransient<IDeleteCategoryUseCase, DeleteCategoryUseCase>();
+
 
         }
 
