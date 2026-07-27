@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UseCases;
+using UseCases.CategoriesUseCase;
 using UseCases.DataStorePluginInterfaces;
 using UseCases.UseCaseInterface;
 using WebApp.Data;
@@ -38,8 +39,10 @@ namespace WebApp
 
             services.AddScoped<ICategoryRepository, CategoryInMemoryRepository>();
 
+            services.AddScoped<IProductRepository, ProductInMemoryRepository>();
+
             // Dependency Injection for Use cases and Repository
-           
+
             services.AddTransient<IViewCategoriesUseCase, ViewCategoriesUseCase>();
 
             services.AddTransient<IAddCategoryUseCase, AddCategoryUseCase>();
@@ -49,6 +52,10 @@ namespace WebApp
             services.AddTransient<IGetCategoryByIdUseCase, GetCategoryByIdUseCase>();
 
             services.AddTransient<IDeleteCategoryUseCase, DeleteCategoryUseCase>();
+
+            services.AddTransient<IViewProductsUseCase, ViewProductsUseCase>();
+
+            services.AddTransient<IAddProductsUseCase, AddProductsUseCase>();
 
 
         }
