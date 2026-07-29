@@ -1,6 +1,6 @@
 ﻿using CoreBusiness;
 
-namespace UseCases.DataStorePluginInterfaces
+namespace UseCases.UseCaseInterface
 {
     public interface IAddProductsUseCase
     {

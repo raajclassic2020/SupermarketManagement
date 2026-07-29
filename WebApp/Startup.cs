@@ -57,6 +57,12 @@ namespace WebApp
 
             services.AddTransient<IAddProductsUseCase, AddProductsUseCase>();
 
+            services.AddTransient<IEditCategoryUseCase, EditCategoryUseCase>();
+
+            services.AddTransient<IGetProductByIdUseCase, GetProductByIdUseCase>();
+
+            services.AddTransient<IEditProductUseCase, EditProductUseCase>();
+
 
         }
 

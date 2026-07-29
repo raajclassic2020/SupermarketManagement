@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UseCases.CategoriesUseCase;
 using UseCases.DataStorePluginInterfaces;
 
 namespace Plugins.DataStore.InMemory
@@ -49,6 +50,24 @@ namespace Plugins.DataStore.InMemory
         public IEnumerable<Product> GetProducts()
         {
             return products;
+        }
+
+        public void UpdateProduct(Product product)
+        {
+           var productToUpdate = GetProductById(product.ProductId);   
+            if (productToUpdate != null)
+            {
+                productToUpdate.Name = product.Name;
+                productToUpdate.CategoryId = product.CategoryId;
+                productToUpdate.Price = product.Price;
+                productToUpdate.Quantity = product.Quantity;
+              
+            }
+        }
+
+        public Product GetProductById(int productId)
+        {
+            return products.FirstOrDefault(x => x.ProductId == productId);
         }
     }
 }

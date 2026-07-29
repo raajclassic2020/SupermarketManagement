@@ -9,20 +9,19 @@ using UseCases.UseCaseInterface;
 
 namespace UseCases
 {
-    public class AddProductsUseCase : IAddProductsUseCase
+    public class EditProductUseCase : IEditProductUseCase
     {
         private readonly IProductRepository productRepository;
 
-        public AddProductsUseCase(IProductRepository productRepository)
+        public EditProductUseCase(IProductRepository productRepository)
         {
             this.productRepository = productRepository;
         }
 
         public void Execute(Product product)
         {
-            productRepository.AddProduct(product);
+            productRepository.UpdateProduct(product);
 
         }
-
     }
 }
